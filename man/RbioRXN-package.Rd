@@ -12,10 +12,10 @@ RbioRXN is an R package that facilitates gaining and processing biochemical reac
 \tabular{ll}{
 Package: \tab RbioRXN\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2013-04-06\cr
+Version: \tab 1.1\cr
+Date: \tab 2014-01-04\cr
 License: \tab GPL (>=2)\cr
-Depends: hash, gdata, CHNOSZ, doMC
+Depends: hash, gdata, CHNOSZ, foreach
 }
 }
 \author{
@@ -56,19 +56,19 @@ sample.reactions = parse.MetaCyc.r(file=tmpdest)
 # Instantiate
 data(example) # load example data
 
-## Rhea instantiation (Rhea.instantiate(parsed_Rhea,parsed_ChEBI,Rhea_ID,multicore=1))
+## Rhea instantiation (Rhea.instantiate(parsed_Rhea,parsed_ChEBI,Rhea_ID))
 pC = example$parsed_ChEBI # sample ChEBI
 Rg = example$Rhea_generic # sample Rhea generic reaction
 
 data(thermo) # this is for the package 'CHNOSZ'
-instanceR = Rhea.instantiate(Rg, pC, Rg[1,'ID'], multicore=1)
+instanceR = Rhea.instantiate(Rg, pC, Rg[1,'ID'])
 print(instanceR)
 
-## MetaCyc instantiation (BioCyc.instantiate(parsed_MetaCyc.r,parsed_MetaCyc.c,BioCyc_ID,multicore=1))
+## MetaCyc instantiation (BioCyc.instantiate(parsed_MetaCyc.r,parsed_MetaCyc.c,BioCyc_ID))
 pMc = example$parsed_MetaCyc.c # sample MetaCyc compound
 Mg = example$MetaCyc_generic # sample generic reaction
 
-instanceM = BioCyc.instantiate(Mg, pMc, Mg[1,'ID'], multicore=1)
+instanceM = BioCyc.instantiate(Mg, pMc, Mg[1,'ID'])
 print(instanceM)
 
 # Rhea.is.generic (Rhea.is.generic(parsed_ChEBI, equation))

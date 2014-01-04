@@ -7,7 +7,7 @@ Instantiate Rhea generic reaction
 Generic reaction is a reaction having at least one compound class. This function gains instance reactions from generic reaction
 }
 \usage{
-Rhea.instantiate(parsed_Rhea, parsed_ChEBI, Rhea_ID, multicore = 1)
+Rhea.instantiate(parsed_Rhea, parsed_ChEBI, Rhea_ID)
 }
 \arguments{
   \item{parsed_Rhea}{
@@ -18,9 +18,6 @@ parse.ChEBI function should be preceded and provided as input
 }
   \item{Rhea_ID}{
 Rhea reaction ID to be instantiated (generic reaction ID)
-}
-  \item{multicore}{
-Using multicore for parallel computing (doMC package)
 }
 }
 \value{
@@ -43,11 +40,11 @@ Byoungnam Min, Kyoung Heon Kim and In-Geol Choi <mbnmbn00@gmail.com>
 \examples{
 data(example) # load example data
 
-## Rhea instantiation (Rhea.instantiate(parsed_Rhea,parsed_ChEBI,Rhea_ID,multicore=1))
+## Rhea instantiation
 pC = example$parsed_ChEBI # sample ChEBI
 Rg = example$Rhea_generic # sample Rhea generic reaction
 
 data(thermo)
-instanceR = Rhea.instantiate(Rg, pC, Rg[1,'ID'], multicore=1)
+instanceR = Rhea.instantiate(Rg, pC, Rg[1,'ID'])
 print(instanceR)
 }

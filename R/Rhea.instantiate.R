@@ -1,5 +1,5 @@
 Rhea.instantiate <-
-function(parsed_Rhea, parsed_ChEBI, Rhea_ID, multicore = 1) {
+function(parsed_Rhea, parsed_ChEBI, Rhea_ID) {
   regexp = "(^\\(?[0-9]*n?\\+?[0-9]*\\)? )(.*)"
   
   R.participant = unlist(strsplit(parsed_Rhea[parsed_Rhea$ID %in% Rhea_ID,'Eq.ChEBI'], " => "))
@@ -61,8 +61,7 @@ function(parsed_Rhea, parsed_ChEBI, Rhea_ID, multicore = 1) {
   # Instantiate
   print('Instantiating')
   
-  registerDoMC(multicore)
-  tmp = foreach(i = 1:length(Rhea_ID)) %dopar% {
+  tmp = foreach(i = 1:length(Rhea_ID)) %do% {
     #for(i in 1:length(Rhea_ID)) {
     instantiate(Rhea_ID[i], parsed_Rhea[parsed_Rhea$ID == Rhea_ID[i],'Eq.ChEBI'], h.class, h.formula, R)
   }

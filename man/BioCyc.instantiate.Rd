@@ -7,7 +7,7 @@ Instantiate BioCyc generic reaction (MetaCyc, BioCyc, EcoCyc)
 Generic reaction is a reaction having at least one compound class. This function gains instance reactions from generic reaction
 }
 \usage{
-BioCyc.instantiate(parsed_MetaCyc.r, parsed_MetaCyc.c, BioCyc_ID, multicore = 1)
+BioCyc.instantiate(parsed_MetaCyc.r, parsed_MetaCyc.c, BioCyc_ID)
 }
 \arguments{
   \item{parsed_MetaCyc.r}{
@@ -18,9 +18,6 @@ parse.MetaCyc.c function should be preceded and provided as input
 }
   \item{BioCyc_ID}{
 BioCyc reaction ID to be instantiated (generic reaction ID)
-}
-  \item{multicore}{
-Using multicore for parallel computing (doMC package)
 }
 }
 \value{
@@ -38,11 +35,11 @@ Byoungnam Min, Kyoung Heon Kim, In-Geol Choi <mbnmbn00@gmail.com>
 \examples{
 data(example) # load example data
 
-## MetaCyc instantiation (BioCyc.instantiate(parsed_MetaCyc.r,parsed_MetaCyc.c,BioCyc_ID,multicore))
+## MetaCyc instantiation
 pMc = example$parsed_MetaCyc.c
 Mg = example$MetaCyc_generic
 
 data(thermo) # this is for the package 'CHNOSZ'
-instanceM = BioCyc.instantiate(Mg, pMc, Mg[1,'ID'], multicore=1)
+instanceM = BioCyc.instantiate(Mg, pMc, Mg[1,'ID'])
 print(instanceM)
 }

@@ -1,5 +1,5 @@
 BioCyc.instantiate <-
-function(parsed_MetaCyc.r, parsed_MetaCyc.c, BioCyc_ID, multicore=1) {
+function(parsed_MetaCyc.r, parsed_MetaCyc.c, BioCyc_ID) {
   # Make hash on compound class (compound class - instances)
   print('Making hash compound class')
   types = parsed_MetaCyc.c[,'TYPES']
@@ -39,8 +39,7 @@ function(parsed_MetaCyc.r, parsed_MetaCyc.c, BioCyc_ID, multicore=1) {
   
   R = keys(h.class)  
   
-  registerDoMC(multicore)
-  tmp = foreach(i = 1:length(BioCyc_ID)) %dopar% {
+  tmp = foreach(i = 1:length(BioCyc_ID)) %do% {
     instantiate(BioCyc_ID[i], parsed_MetaCyc.r[parsed_MetaCyc.r$ID == BioCyc_ID[i],'Equation'], h.class, h.formula, R)
   }
   

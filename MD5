@@ -1,6 +1,6 @@
-1cf66ed2ddf531aef3ab6441fcd25523 *DESCRIPTION
-1be9c350fa0d1c02bcd30f180141b1ee *NAMESPACE
-cbd871a50e5439d75b7eec8ccb83ae99 *R/BioCyc.instantiate.R
+06465948f052605168081e227d9054a6 *DESCRIPTION
+c55d5a0a932ebf958acaaa949db18fe2 *NAMESPACE
+2908edf94239735f3afc486092cef42e *R/BioCyc.instantiate.R
 15a2300836834c62169ed7673b12e934 *R/BioCyc.is.generic.R
 7d1f20740d974d6d401fd988158d6bb3 *R/BioCyc.massBal.R
 2b67272dd5a09038c79c6d6935c475a4 *R/BioCyc2ChEBI.R
@@ -9,7 +9,7 @@ cbd871a50e5439d75b7eec8ccb83ae99 *R/BioCyc.instantiate.R
 b3a9dff8a5fc9ad73b8287bec0c0d225 *R/BioCyc2cName.R
 121c2175359f2ecb5f484ac8080e2080 *R/RbioRXN-internal.R
 923ce9da4fb239856f41e6359a694b26 *R/Rhea.buildHash.class.R
-406fe3b15500caa982c7387a321951af *R/Rhea.instantiate.R
+ce61726b868351df2051ad6930f5ba96 *R/Rhea.instantiate.R
 380b7a116dadb6e0fd85e9265898baa7 *R/Rhea.is.generic.R
 6184abc0f92f8806715007c30d99f9b8 *R/Rhea.massBal.R
 51bb1dd541e16c9b724a24302baa4d7c *R/Rhea2KEGG.R
@@ -23,16 +23,16 @@ c04417962ccf0d162d9212f56051ea67 *R/get.Rhea.R
 8c3327179e15540afc19cdb8eb9c3afd *R/parse.MetaCyc.c.R
 68f822dcff0fefcb92708e2c9292d064 *R/parse.MetaCyc.r.R
 5d2b758450cb05544a25a24a0c721b9c *R/parse.Rhea.R
-e0ccb917573ebfddc6a8732d6de27e11 *data/example.rda
-c418bbe978f2f3368c01198c97f9d52b *man/BioCyc.instantiate.Rd
-9d623ff992a2915d7e8d930c943f580c *man/BioCyc.is.generic.Rd
+51509e41a256fdc7043af44d64913bc9 *data/example.rda
+25fdcbd8bc390647b4691c98ee0e9900 *man/BioCyc.instantiate.Rd
+69add88ab30bb3e827393bbe644d10ab *man/BioCyc.is.generic.Rd
 faaa217665075b0d2497711e1012afae *man/BioCyc.massBal.Rd
 515183e22811702cbc02864a736a650e *man/BioCyc2ChEBI.Rd
 e203bd9d257d152b65f55f04de1a4b79 *man/BioCyc2KEGG.Rd
 eddfa17cd97a045c4a22be8088d76bf5 *man/BioCyc2PubChem.Rd
 8e0ea8e0d7fc54ffecd5e01b0575818c *man/BioCyc2cName.Rd
-58dd4e2dbc06604f20e6a487590d215a *man/RbioRXN-package.Rd
-616f5b6e37dc76921c5d61448fac79ad *man/Rhea.instantiate.Rd
+5b482ba1b35545c5709d640d501511cc *man/RbioRXN-package.Rd
+a3b702023d441292f5dfdcc728fc1816 *man/Rhea.instantiate.Rd
 3f368a9913a8c599e1c384c0141290d2 *man/Rhea.is.generic.Rd
 d422be20e559e145628c62a9ca1a4b2a *man/Rhea.massBal.Rd
 e111533509fac74d06f91d05355a4fe1 *man/Rhea2KEGG.Rd
@@ -42,5 +42,5 @@ cabb8852e1dda538a804506ffc329ecc *man/Rhea2cName.Rd
 43b138b5d6424d12b40590f18d6861f9 *man/get.Rhea.Rd
 54b7810ec287bd339b8ccda3ca3ed5b5 *man/parse.ChEBI.Rd
 d7866b8247d6ba763dc217bf4e711f06 *man/parse.MetaCyc.c.Rd
-81488ecf8d7a968860911c7972d8cea3 *man/parse.MetaCyc.r.Rd
+264e8c35fbe57719ac2aebef2435cf04 *man/parse.MetaCyc.r.Rd
 4488d5acfa5c013325c8f698c7133763 *man/parse.Rhea.Rd

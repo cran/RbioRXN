@@ -32,7 +32,7 @@ Byoungnam Min, Kyoung Heon Kim and In-Geol Choi <mbnmbn00@gmail.com>
 \examples{
 data(example) # load example data
 
-## MetaCyc instantiation (BioCyc.instantiate(parsed_MetaCyc.r,parsed_MetaCyc.c,BioCyc_ID,multicore))
+## MetaCyc instantiation (BioCyc.instantiate(parsed_MetaCyc.r,parsed_MetaCyc.c,BioCyc_ID))
 pMc = example$parsed_MetaCyc.c # sample MetaCyc compound
 Mg = example$MetaCyc_generic # sample generic reaction
 

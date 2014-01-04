@@ -24,7 +24,8 @@ http://metacyc.org/
 Byoungnam Min, Kyoung Heon Kim and In-Geol Choi <mbnmbn00@gmail.com>
 }
 \examples{
-# sample reactions.dat (getting full data needs license; http://metacyc.org/download-flatfiles.shtml)
+# sample reactions.dat 
+## getting full data needs license; http://metacyc.org/download-flatfiles.shtml
 url = 'http://bioinformatics.ai.sri.com/ptools/flatfile-samples/reactions.dat'
 tmpdest = tempfile(pattern = "reactions") 
 download.file(url, destfile=tmpdest)
