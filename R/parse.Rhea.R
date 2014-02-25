@@ -68,7 +68,7 @@ function(owl) {
       chebi = sub(pattern = regexp, replacement = '\\2', x = owl[i])
     }
     else if(con5[i]) {
-      .set(h.ChEBI, keys= name, values = chebi)
+      h.ChEBI[name] = chebi
     }
   }
   

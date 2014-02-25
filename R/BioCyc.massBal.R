@@ -15,9 +15,9 @@ function(parsed_MetaCyc.c, equation) {
   
   ind = grep("^$", parsed_MetaCyc.c[,'molecular formula'])
   if(length(ind) > 0) {
-    .set(h.formula, keys = parsed_MetaCyc.c[-ind,'BioCyc'], values = parsed_MetaCyc.c[-ind,'molecular formula'])
+    h.formula[parsed_MetaCyc.c[-ind,'BioCyc']] = parsed_MetaCyc.c[-ind,'molecular formula']
   } else {
-    .set(h.formula, keys = parsed_MetaCyc.c[,'BioCyc'], values = parsed_MetaCyc.c[,'molecular formula'])
+    h.formula[parsed_MetaCyc.c[,'BioCyc']] = parsed_MetaCyc.c[,'molecular formula']
   }
   
   

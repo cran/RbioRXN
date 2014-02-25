@@ -2,14 +2,14 @@ Package: RbioRXN
 Type: Package
 Title: RbioRXN - process Rhea and MetaCyc (BioCyc, EcoCyc) biochemical
         reaction data
-Version: 1.1
-Date: 2014-01-04
+Version: 1.2
+Date: 2014-02-25
 Author: Byoungnam Min, Kyoung Heon Kim and In-Geol Choi
 Maintainer: Byoungnam Min <mbnmbn00@gmail.com>
-Description: RbioRXN is an R package that facilitates retrieving and processing biochemical reaction data such as Rhea, MetaCyc, BioCyc and EcoCyc. The package provides various functions to download and parse data, instantiate generic reaction, interchange compound ID among well-known biochemical databases (e.g. KEGG, PubChem, and ChEBI) and check mass balance. The package aims to construct an integrated metabolic network and genome-scale metabolic model. 
+Description: RbioRXN is an R package that facilitates retrieving and processing biochemical reaction data such as Rhea, MetaCyc, BioCyc and EcoCyc. The package provides various functions to download and parse data, instantiate generic reaction, interchange compound ID among well-known biochemical databases (e.g. KEGG, PubChem, and ChEBI) and check mass balance. The package aims to construct an integrated metabolic network and genome-scale metabolic model.
 License: GPL (>= 2)
-Depends: R (>= 2.0.0), gdata, CHNOSZ, hash, foreach
-Packaged: 2014-01-04 23:35:22 UTC; mbnmbn00
+Depends: R (>= 3.0.2), gdata, CHNOSZ, hash, foreach
+Packaged: 2014-02-25 05:44:19 UTC; mbnmbn00
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2014-01-05 00:46:44
+Date/Publication: 2014-05-14 07:27:25

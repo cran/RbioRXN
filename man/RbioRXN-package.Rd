@@ -12,8 +12,8 @@ RbioRXN is an R package that facilitates gaining and processing biochemical reac
 \tabular{ll}{
 Package: \tab RbioRXN\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2014-01-04\cr
+Version: \tab 1.2\cr
+Date: \tab 2014-02-24\cr
 License: \tab GPL (>=2)\cr
 Depends: hash, gdata, CHNOSZ, foreach
 }

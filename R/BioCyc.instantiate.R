@@ -11,7 +11,7 @@ function(parsed_MetaCyc.r, parsed_MetaCyc.c, BioCyc_ID) {
   
   for(i in 1:length(types)) { 
     ind = grep(types[i], parsed_MetaCyc.c[,'TYPES'])
-    .set(h.class, keys = types[i], values = parsed_MetaCyc.c[ind,'BioCyc'])
+    h.class[keys = types[i], values = parsed_MetaCyc.c[ind,'BioCyc']]
   }
   
   # Make hash on compound molecular formula
@@ -29,9 +29,9 @@ function(parsed_MetaCyc.r, parsed_MetaCyc.c, BioCyc_ID) {
   
   ind = grep("^$", parsed_MetaCyc.c[,'molecular formula'])
   if(length(ind) > 0) {
-  .set(h.formula, keys = parsed_MetaCyc.c[-ind,'BioCyc'], values = parsed_MetaCyc.c[-ind,'molecular formula'])
+  h.formula[keys = parsed_MetaCyc.c[-ind,'BioCyc'], values = parsed_MetaCyc.c[-ind,'molecular formula']]
   } else {
-    .set(h.formula, keys = parsed_MetaCyc.c[,'BioCyc'], values = parsed_MetaCyc.c[,'molecular formula'])
+    h.formula[keys = parsed_MetaCyc.c[,'BioCyc'], values = parsed_MetaCyc.c[,'molecular formula']]
   }
   
   # Instantiate

@@ -8,7 +8,7 @@ function(c.table, R) {
     if(length(tmp) > 0) {
       for(j in 1:length(tmp)) {
         if(tmp[j] %in% R) {
-          .set(h.class, keys = tmp[j], values = c(h.class[[tmp[j]]], c.table[i,'ChEBI']))
+          h.class[tmp[j]] = c(h.class[[tmp[j]]], c.table[i,'ChEBI'])
         }
       }  
     }

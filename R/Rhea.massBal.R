@@ -33,7 +33,7 @@ function(parsed_ChEBI, equation) {
       } else {
         tmp = unlist(strsplit(parsed_ChEBI[parsed_ChEBI$ChEBI == R.participant[i],'InChI'], '/'))[2]
       }
-      .set(h.formula, keys = parsed_ChEBI[parsed_ChEBI$ChEBI == R.participant[i],'ChEBI'], values = tmp)
+      h.formula[keys = parsed_ChEBI[parsed_ChEBI$ChEBI == R.participant[i],'ChEBI'], values = tmp]
     }
   }
   # exception

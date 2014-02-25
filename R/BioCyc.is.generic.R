@@ -14,7 +14,7 @@ function(parsed_MetaCyc.c, equation) {
   
   for(i in 1:length(types)) { 
     ind = grep(types[i], parsed_MetaCyc.c[,'TYPES'])
-    .set(h.class, keys = types[i], values = parsed_MetaCyc.c[ind,'BioCyc'])
+    h.class[types[i]] = parsed_MetaCyc.c[ind,'BioCyc']
   }
   
   R = keys(h.class)  

@@ -52,7 +52,7 @@ function(parsed_Rhea, parsed_ChEBI, Rhea_ID) {
       } else {
         tmp = unlist(strsplit(parsed_ChEBI[parsed_ChEBI$ChEBI == participant[i],'InChI'], '/'))[2]
       }
-      .set(h.formula, keys = parsed_ChEBI[parsed_ChEBI$ChEBI == participant[i],'ChEBI'], values = tmp)
+      h.formula[parsed_ChEBI[parsed_ChEBI$ChEBI == participant[i],'ChEBI']] = tmp
     }
   }
   # exception
