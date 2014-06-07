@@ -1,2 +1,2 @@
-export(BioCyc2ChEBI, BioCyc2cName, BioCyc2KEGG, BioCyc2PubChem, BioCyc.is.generic, get.ChEBI, get.Rhea, BioCyc.instantiate, parse.ChEBI, parse.MetaCyc.c, parse.MetaCyc.r, parse.Rhea, Rhea2cName, Rhea2KEGG, Rhea.instantiate, Rhea.is.generic, Rhea.massBal, BioCyc.massBal)
-import(gdata, CHNOSZ, hash, foreach)
+export(build.subtable, check.mass.balance, get.chebi.all, get.kegg.all, get.kegg.byId, get.metacyc.all, get.metacyc.reaction.byId, get.rhea.all, get.rhea.byCompound, get.rhea.byId, get.unipathway.all, is.generic.metacyc, is.generic.rhea, parse.metacyc.compound, parse.metacyc.reaction, instantiate.rhea, instantiate.metacyc)
+import(plyr, RCurl, gdata, KEGGREST, data.table, stringr, fmcsR)

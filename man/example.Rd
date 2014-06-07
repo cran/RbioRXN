@@ -4,13 +4,9 @@
 }
 \docType{data}
 \title{
-RbioRXN example data
+Rbiorxn example data
 }
 \description{
-Example data for the functions in RbioRXN including Rhea, ChEBI, MetaCyc biochemical data
+Example data for Rbiorxn
 }
 \usage{data(example)}
-\source{
-http://www.ebi.ac.uk/rhea/
-http://www.metacyc.org
-}
