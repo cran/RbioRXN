@@ -1,4 +1,4 @@
-bf9cf57f6a8f5a378f130349ad9bc94a *DESCRIPTION
+a1c3d67ced81b9a3ee93e934924289ba *DESCRIPTION
 1fd3a52881e6445a72b541b808bebb63 *NAMESPACE
 ef5afd230563f5e131509700f56486a2 *R/RbioRXN-internal.R
 00fac7850b44cd79350afca97bbdb1dc *R/build.subtable.R
@@ -14,13 +14,13 @@ df637f17d60f88209d0a548010752d06 *R/get.rhea.byCompound.R
 435d65745dffd6e97e0e82e453ec505e *R/get.unipathway.all.R
 c38a93ed7526e52ab376839763da5843 *R/instantiate.R
 7f0b89a9f34bc8401f7aabb1b07005f3 *R/instantiate.metacyc.R
-0ab8dfcb1cb7acfb677486bb66414f2d *R/instantiate.rhea.R
+17d7400e6c310e4e09fa182e0fb1da49 *R/instantiate.rhea.R
 5d84d2352a38a623af1287e5fa2dd780 *R/is.generic.metacyc.R
 9dbf62889e0db39eecaa75830a9146c5 *R/is.generic.rhea.R
 273f4fb0cd122cd8adb185c748cf13fc *R/parse.metacyc.compound.R
 18af259210a272cbb8bc9f468447b6fc *R/parse.metacyc.reaction.R
-3b8ee9ec2919c71a165a48a0014e4efd *data/example.rda
-9d011a5c546e9efb79d383303f25f4ae *man/RbioRXN-package.Rd
+e805a1522d5830192887bb4def11bb96 *data/example.rda
+f568618ad9bfc847903738278696a8b7 *man/RbioRXN-package.Rd
 7b08b993be5568badaae71eb53f51a3d *man/build.subtable.Rd
 b09be936a5b5880c017a143d2cee7ae4 *man/check.mass.balance.Rd
 b2db9b9a4000af37eeac01cbf094de59 *man/example.Rd
@@ -37,5 +37,5 @@ ca698818f34dcd2e7323217a66b39ada *man/instantiate.metacyc.Rd
 0903361ccde122b3d23a9fe8122a5473 *man/instantiate.rhea.Rd
 9367939eca94fb12effed7604f8dddae *man/is.generic.metacyc.Rd
 e38ca393221c31647f0d3a0e3ebb6753 *man/is.generic.rhea.Rd
-fea0cfc3db7dbca1c068f6265b223ffa *man/parse.metacyc.compound.Rd
+a912a8afb4a4230f8835c97caffc34e9 *man/parse.metacyc.compound.Rd
 d6559725bcb7c6ddd08e4c581af18e29 *man/parse.metacyc.reaction.Rd

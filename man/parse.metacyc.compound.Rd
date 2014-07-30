@@ -78,10 +78,11 @@ MetaCyc: http://metacyc.org/
 Byoungnam Min <mbnmbn00@gmail.com>, Byeonghyuk Park, Kyoung Heon Kim and In-Geol Choi 
 }
 \examples{
-url = 'http://bioinformatics.ai.sri.com/ptools/flatfile-samples/compounds.dat'
-tmpdest = tempfile(pattern = "compounds")
-download.file(url, destfile=tmpdest)
+## parse.metacyc.compound: Not run
+#url = 'http://bioinformatics.ai.sri.com/ptools/flatfile-samples/compounds.dat'
+#tmpdest = tempfile(pattern = "compounds")
+#download.file(url, destfile=tmpdest)
 
-sample.compounds = parse.metacyc.compound(datPath=tmpdest)
+#sample.compounds = parse.metacyc.compound(datPath=tmpdest)
 }
 \keyword{ MetaCyc }
