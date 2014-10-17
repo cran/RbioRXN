@@ -21,7 +21,7 @@ function(oboPath='') {
     	type = gsub('\\]', '', type)
     	unipathwayRow[['type']] = type
   	} else if(grepl('^$', i)) {
-    	if(unipathwayRow[['type']] == 'Term') {
+    	if( !is.null(unipathwayRow[["type"]]) && unipathwayRow[['type']] == 'Term') {
       	unipathwayRow = as.data.frame(unipathwayRow, stringsAsFactors=FALSE)
       	unipathway = rbind.fill(unipathway, unipathwayRow)
     	}
