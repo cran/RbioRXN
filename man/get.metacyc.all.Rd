@@ -5,6 +5,8 @@ Download current MetaCyc via BioCyc Web Services
 }
 \description{
 This function first retrieves all MetaCyc reaction IDs and download BioPAX level 3 for each reaction, then parse to generate data.frame() object. Note that because this function interacts with BioCyc web service for every reaction, it will take many hours depending on your network speed. Thus, we strongly recommend to use parse.metacyc.reaction() and parse.metacyc.compound() functions in this package after manually downloading MetaCyc from http://biocyc.org/download.shtml
+
+NOTE: The MetaCyc server is occasionally unavailable, so this function accesses our own server as additional resource after trying original server. Our server may not contain latest data.
 }
 \usage{
 get.metacyc.all()

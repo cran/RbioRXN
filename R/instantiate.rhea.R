@@ -34,7 +34,6 @@ instantiate.rhea = function(equation, chemical_table, id_col = 'chebi', parent_c
     }
     return(result_list)
   }
-  
   cat(sprintf('%i alkyl compounds, %i partly polymerized compounds found\n', length(alkyl), length(partly_polymerized)))
   
   # Build parent-child table
@@ -221,7 +220,7 @@ instantiate.rhea = function(equation, chemical_table, id_col = 'chebi', parent_c
         child3 = child2 
       }
       if(nrow(child3) == 0) {
-        cat(sprintf('%s cannot be instantiated because there might be lack of proper pair of children\n', equation[i]))
+        message(sprintf('WARNING: %s cannot be instantiated because there might be lack of proper pair of children', equation[i]))
         result[[equation[i]]] = 0
         no_pair = no_pair + 1
         next
@@ -270,6 +269,14 @@ instantiate.rhea = function(equation, chemical_table, id_col = 'chebi', parent_c
         next    
       }
       
+      # If reaction is transport reaction, just pick the same instance substrand and product
+      if(class_substrate == class_product) {
+        ind_same_sp = which(child4$chebi.x == child4$chebi.y)
+        instance_equation_final = instance_equation[ind_balanced][ind_same_sp]
+        result[[equation[i]]] = instance_equation_final 
+        next
+      }
+      
       # One instance substrate has only one instance product, and it is should be most similar chemical pair
       unique_list.x = names(which(table(child4[[id_col.x]]) == 1))
       unique_table.x = child4[child4[[id_col.x]] %in% unique_list.x,c(id_col.x, id_col.y)]
@@ -284,7 +291,7 @@ instantiate.rhea = function(equation, chemical_table, id_col = 'chebi', parent_c
         }
         max_target = which(similarity == max(similarity))
         if(length(max_target) > 1) {
-          message(sprintf('WARNING: For compound %s, target %s have same similarity, so you have to check manually', equation[i], paste(target[max_target], collapse=' and ')))
+          message(sprintf('WARNING: For compound %s, target %s have same similarity, so you have to check manually', k, paste(target[max_target], collapse=' and ')))
         }
         instance_pair = cbind(k, target[max_target])
         colnames(instance_pair) = colnames(unique_table.x)
@@ -338,7 +345,7 @@ instantiate.rhea = function(equation, chemical_table, id_col = 'chebi', parent_c
       
       result[[equation[i]]] = instance_equation_final 
     } else {
-      message(sprintf('Equation: %s is not instantiated by this function', equation[i]))
+      message(sprintf('WARNING: %s is not instantiated by this function', equation[i]))
       result[[equation[i]]] = 0
     }
   }

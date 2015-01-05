@@ -4,9 +4,23 @@ function() {
 
   message('Download MetaCyc reaction list. It takes a while')
 	h = basicTextGatherer()
-	curlPerform(url = url, writefunction = h$update)
+	
+  curl.result = tryCatch({
+	  curlPerform(url = url, writefunction = h$update)
+	}, warning = function(w) {
+	  message('WARNING: MetaCyc server is unstable now. We are trying to get alternative server, but we recommend try this function again later')
+	}, error = function(e) {
+	  message('WARNING: MetaCyc server is unstable now. We are trying to get alternative server, but we recommend try this function again later')
+    alter_url = 'http://compbio.korea.ac.kr/rbiorxn/metacyc_all.html'
+	  curlPerform(url = alter_url, writefunction = h$update)
+	})
 	
 	xml = h$value()
+  if(xml == '') {
+    message('get.metacyc.all() function is not properly performed. Please email the author if it keeps happening')
+    return(NA)
+  }
+  
 	xml = unlist(strsplit(xml, '\n'))
 	
 	index = grep('^  <Reaction ID', xml)

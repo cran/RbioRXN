@@ -5,6 +5,8 @@ Download given MetaCyc reaction via BioCyc web services
 }
 \description{
 This function downloads and parses given MetaCyc reaction in BioPAX level 3 via MetaCyc web services (http://biocyc.org/web-services.shtml), and generate data.frame() object
+
+NOTE: The MetaCyc server is occasionally unavailable, so this function accesses our own server as additional resource after trying original server. Our server may not contain latest data.
 }
 \usage{
 get.metacyc.reaction.byId(metacycId)

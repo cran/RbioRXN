@@ -1104,7 +1104,7 @@ function(biopax) {
   direction[ind_right] = ' => '
   direction[ind_left] = ' <= '
   
-  equation = paste(left_sub2$V1, direction, right_sub2$V1, sep='')
+  equation = paste(left_sub2$assemble, direction, right_sub2$assemble, sep='')
   
   ind_without_out = grepl('\\(out\\)', equation) == F
   equation[ind_without_out] = gsub('\\(in\\)', '', equation[ind_without_out])
