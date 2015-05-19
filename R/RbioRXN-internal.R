@@ -338,7 +338,7 @@ function(owl) {
 
 	regexp = list()	
 
-	regexp[[entry[1]]] = '(<bp:biochemicalReaction rdf:about=")(.*)(">)' # biochemical reaction
+	regexp[[entry[1]]] = '(<bp:biochemicalReaction rdf:about="http://identifiers\\.org/rhea/)(.*)(">)' # biochemical reaction
 	regexp[[entry[2]]] = '(<bp:transport.* rdf:about=")(.*)(">)' # transport reaction
 	regexp[[entry[3]]] = '(<bp:NAME .*>)(.*)(</bp:NAME>)' # reaction equation expressed by chemical name
 	regexp[[entry[4]]] = '(<bp:EC-NUMBER .*>)(.*)(</bp:EC-NUMBER>)' # EC number
@@ -381,15 +381,17 @@ function(owl) {
 		} else if(i == floor(length(owl)/2)) {
 			cat('50% finished\n')
 		}
-		for(j in 1:length(entry)) {
+		
+    for(j in 1:length(entry)) {
 			# tag start
 			if(j %in% 1:2 && condition[[entry[j]]][i]) {
 				rheaReactionRow = list()
 				value = unlist(strsplit(owl[i], split = '"'))[2]
-				value = sub('#', '', value)
+        value = tail(unlist(strsplit(value, split = '/')), 1)
 				rheaReactionRow[['rheaId']] = c(rheaReactionRow[[entry[1]]], value)
 				rheaReactionRow[['reactionType']] = entry[j]
 			}
+      
 			else if(j %in% 3:16 && condition[[entry[j]]][i]) {
 				value = sub(regexp[[entry[j]]], '\\2', owl[i])
 				rheaReactionRow[[entry[j]]] = paste(rheaReactionRow[[entry[j]]], value, sep=',')
@@ -437,10 +439,10 @@ function(owl) {
 
 	regexp = list()
 
-	regexp[[entry[1]]] = '(<bp:smallMolecule rdf:about="#compound:)(.+)(">)' # ChEBI ID
-	regexp[[entry[2]]] = '(<bp:NAME rdf:datatype .+>)(.*)(</bp:NAME>)' # compound common name used in equation
-	regexp[[entry[3]]] = '( <bp:XREF rdf:resource="#CHEBI:)(.*)(" />)'
-	regexp[[entry[4]]] = '</bp:smallMolecule>' # close
+	regexp[[entry[1]]] = '(<bp:physicalEntity rdf:about="#compound:)(.+)(">)' # ChEBI ID
+  regexp[[entry[2]]] = '(<bp:NAME rdf:datatype .+>)(.*)(</bp:NAME>)' # compound common name used in equation
+	regexp[[entry[3]]] = '(<bp:COMMENT rdf:datatype = "http://www.w3.org/2001/XMLSchema#string">.* CHEBI:)(.*)(</bp:COMMENT>)'
+	regexp[[entry[4]]] = '</bp:physicalEntity>' # close
 
 	# pre-calculate condtions (TRUE/FALSE) for fast 'for' loop operation
 
@@ -528,8 +530,12 @@ function(owl) {
       } else {localization = ""}
 			reactantsWOcoefficient[j] = gsub("\\(in\\)", "", reactantsWOcoefficient[j])
       reactantsWOcoefficient[j] = gsub("\\(out\\)", "", reactantsWOcoefficient[j])
-      chebi = rheaChemical[rheaChemical$name == reactantsWOcoefficient[j], 'chebiId']
-      reactants[j] = paste(coefficient, chebi, localization, sep="")
+			chebi = rheaChemical[rheaChemical$name == reactantsWOcoefficient[j], 'chebiId']
+      if(length(chebi) > 1) {
+        reactants[j] = "Unknown"
+      } else {
+        reactants[j] = paste(coefficient, chebi, localization, sep="")
+      }
 			reactantsChebi = c(reactantsChebi, chebi)
     }
 		products = unlist(strsplit(participants[2], split = " \\+ "))
@@ -544,9 +550,13 @@ function(owl) {
      	} else {localization = ""}
      	productsWOcoefficient[k] = gsub("\\(in\\)", "", productsWOcoefficient[k])
      	productsWOcoefficient[k] = gsub("\\(out\\)", "", productsWOcoefficient[k])
-			chebi = rheaChemical[rheaChemical$name == productsWOcoefficient[k], 'chebiId']
-			products[k] = paste(coefficient, chebi, localization, sep='')
-			productsChebi = c(productsChebi, chebi)
+     	chebi = rheaChemical[rheaChemical$name == productsWOcoefficient[k], 'chebiId']
+     	if(length(chebi) > 1) {
+        products[k] = "Unknown"  
+     	} else {
+     	  products[k] = paste(coefficient, chebi, localization, sep='')   
+     	}
+      productsChebi = c(productsChebi, chebi)
     }
    	equationWithChebi[i] = paste(paste(reactants, collapse = " + "), paste(products, collapse = " + "), sep = arrow)
 		equationParticipant[i] = paste(c(reactantsChebi, productsChebi), collapse=',')

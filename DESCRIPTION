@@ -1,16 +1,16 @@
 Package: RbioRXN
 Type: Package
-Title: Process Rhea, KEGG, MetaCyc, Unipathway biochemical reaction
-        data
-Version: 1.5
-Date: 2015-01-05
-Author: Byoungnam Min, Byeonghyuk Park, Kyoung Heon Kim and In-Geol Choi
+Title: Process Rhea, KEGG, MetaCyc, Unipathway Biochemical Reaction
+        Data
+Version: 1.5.1
+Date: 2015-05-19
+Author: Byoungnam Min, Byeonghyeok Park, Kyoung Heon Kim and In-Geol Choi
 Maintainer: Byoungnam Min <mbnmbn00@gmail.com>
-Description: RbioRXN facilitates retrieving and processing biochemical reaction data such as Rhea, MetaCyc, KEGG and Unipathway. The package provides the functions to download and parse data, instantiate generic reaction and check mass-balance. The package aims to construct an integrated metabolic network and genome-scale metabolic model.
+Description: To facilitate retrieving and processing biochemical reaction data such as Rhea, MetaCyc, KEGG and Unipathway, the package provides the functions to download and parse data, instantiate generic reaction and check mass-balance. The package aims to construct an integrated metabolic network and genome-scale metabolic model.
 License: GPL (>= 2)
 Depends: R (>= 3.0.3), fmcsR, ChemmineR
 Imports: plyr, RCurl, gdata, KEGGREST, data.table, stringr
-Packaged: 2015-01-14 01:55:22 UTC; mbnmbn00
 NeedsCompilation: no
+Packaged: 2015-05-19 07:43:33 UTC; mbnmbn00
 Repository: CRAN
-Date/Publication: 2015-01-14 06:28:29
+Date/Publication: 2015-05-19 13:07:25
